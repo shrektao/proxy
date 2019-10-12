@@ -19,21 +19,15 @@
 #
 -->
 
-# Apache Blinky
+# Apache ble_tgt
 
 ## Overview
 
-Apache Blinky is a skeleton for new Apache Mynewt projects.  The user downloads
-this skeleton by issuing the "newt new" command (using Apache Newt).  Apache
-blinky also contains an example app and target for use with Apache Mynewt to
-help you get started.
+Apache ble_tgt is a code assignment for Proxy interview process.
 
 ## Building
 
-Apache Blinky contains an example Apache Mynewt application called blinky.
-When executed on suitably equipped hardware, this application repeatedly blinks
-an LED.  The below procedure describes how to build this application for the
-Apache Mynewt simulator.
+Apache ble_tgt reuse Lance Cohen's ble_tmp_sensor code to implement an interview assignment that need to record past 10 history tempture records with 100 ms apartr.
 
 1. Download and install Apache Newt.
 
@@ -45,7 +39,7 @@ You will need to download the Apache Newt tool, as documented in the [Getting St
     $ newt install
 ```
 
-3. Build the blinky app for the sim platform using the "my_blinky_sim" target
+3. Build the ble_tgt app for the redbear platform using the "ble_temp_sensor" target
 (executed from the blinky directory).
 
 ```no-highlight
