@@ -69,13 +69,9 @@ gatt_svr_chr_cb(
 {
     int rc;
     int16_t temp[LATEST_TEMP_COUNT];
-    //for(int i=0;i<LATEST_TEMP_COUNT;i++) {
-    //	temp[i] = get_temp_measurement();
-    //}
 	/* get the history record with latest at beginning. */
     get_temp_record(&temp[0]);
 
-    //LOG(INFO, "read value=%i\n", temp);
     LOG(INFO, "read value=");
     for(int i=0;i<LATEST_TEMP_COUNT;i++) {
         LOG(INFO, "%i\t", temp[i]);
