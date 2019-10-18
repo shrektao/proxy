@@ -80,11 +80,10 @@ ble_sensor_handler(void *arg)
         current=os_time_get();
 	    uint32_t time_delta;
 	    os_time_ticks_to_ms((current-start), &time_delta);
-	    //if(time_delta>=100) {
-            //LOG(INFO, "current time delta=%d\n", time_delta);
-	        for(int i=0;i<LATEST_TEMP_COUNT-1;i++) {
-                temp_record[i]=temp_record[i+1];
-            }
+	    
+	    for(int i=0;i<LATEST_TEMP_COUNT-1;i++) {
+            temp_record[i]=temp_record[i+1];
+        }
 	    temp_record[LATEST_TEMP_COUNT-1]=get_temp_measurement();
 	    start=current;
         //}
