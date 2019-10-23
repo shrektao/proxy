@@ -71,22 +71,16 @@ get_temp_record(int16_t *record_array)
 static void
 ble_sensor_handler(void *arg)
 {
-    os_time_t start=os_time_get();
-    os_time_t current;
     os_time_t delay;
     os_time_ms_to_ticks(100, &delay);
     while(1) {
         os_time_delay(delay);
-        current=os_time_get();
-	    uint32_t time_delta;
-	    os_time_ticks_to_ms((current-start), &time_delta);
 	    
 	    for(int i=0;i<LATEST_TEMP_COUNT-1;i++) {
             temp_record[i]=temp_record[i+1];
         }
 	    temp_record[LATEST_TEMP_COUNT-1]=get_temp_measurement();
 	    start=current;
-        //}
     }
 }
 
